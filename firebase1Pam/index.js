@@ -95,3 +95,5 @@ const deleteCar = async () => {
   await deleteDoc(doc(db, "cars", "1"));
 };
 deleteCar();
+
+//https://firebase.google.com/
