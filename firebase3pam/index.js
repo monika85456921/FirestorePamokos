@@ -126,7 +126,7 @@ logoutBtn.addEventListener("click", (event) => {
       // An error happened.
       console.log(error);
     });
-});
+}); 
 
 // let form = document.getElementById("form");
 // let carBrand = document.getElementById("carBrandInput");
