@@ -77,7 +77,11 @@ loginBtn.addEventListener("click", (event) => {
       const errorMessage = error.message;
     });
 });
-
+const loginContainer = document.getElementById("loginContainer");
+const greetingImage = document.createElement("img");
+greetingImage.alt = "greeting";
+greetingImage.id = "panelImg";
+loginContainer.appendChild(greetingImage);
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
@@ -89,11 +93,7 @@ onAuthStateChanged(auth, (user) => {
         if (snapshot.exists()) {
           const usersDataFromDB = snapshot.val();
           const userRole = usersDataFromDB.role;
-          const loginContainer = document.getElementById("loginContainer");
-          const greetingImage = document.createElement("img");
-          greetingImage.alt = "greeting";
-          greetingImage.id = "panelImg";
-          loginContainer.appendChild(greetingImage);
+
           if (userRole === "admin") {
             console.log("Tu esi admin'as!Tau viskas galima!");
             greetingImage.src =
@@ -111,7 +111,10 @@ onAuthStateChanged(auth, (user) => {
         alert(error);
       });
   } else {
-    // console.log("user logged out");
+    console.log("you have logged out, cya!");
+    //pav logout'o
+    greetingImage.src =
+      "https://www.shutterstock.com/shutterstock/photos/2155853693/display_1500/stock-vector-goodbye-quote-flat-high-quality-vector-2155853693.jpg";
   }
 });
 logoutBtn.addEventListener("click", (event) => {
@@ -120,13 +123,12 @@ logoutBtn.addEventListener("click", (event) => {
       // Sign-out successful.
       const panelImg = document.getElementById("panelImg");
       panelImg.remove();
-      console.log("you have logged out, cya!");
     })
     .catch((error) => {
       // An error happened.
       console.log(error);
     });
-}); 
+});
 
 // let form = document.getElementById("form");
 // let carBrand = document.getElementById("carBrandInput");
