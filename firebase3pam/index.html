@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>car market</title>
+    <style>
+      div {
+        border: 1px solid black;
+        max-width: 400px;
+      }
+      img {
+        height: 300px;
+        width: 300px;
+        object-fit: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="regLogForm">
+      <input type="email" placeholder="email" id="regEmail" />
+      <input type="password" placeholder="password" id="passwInput" />
+      <button id="registerBtn" type="submit">Register</button>
+      <button id="loginBtn" type="submit">Login</button>
+      <button id="logoutBtn" type="submit">Logout</button>
+    </form>
+    <br />
+    <form id="form">
+      <input placeholder="Car Brand" type="text" id="carBrandInput" />
+      <input placeholder="Car Model" type="text" id="carModelInput" />
+      <input placeholder="Car Year" type="number" id="carYearInput" />
+      <input placeholder="Car Price" type="number" id="carPriceInput" />
+      <input placeholder="Car Photo" type="text" id="favoriteCarPhotoInput" />
+
+      <button id="insertBtn" type="submit">INSERT</button>
+      <button id="updateBtn" type="submit">UPDATE</button>
+      <button id="deleteBtn" type="submit">DELETE</button>
+    </form>
+    <div id="container"></div>
+    <div id="loginContainer"></div>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
